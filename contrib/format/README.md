@@ -30,7 +30,7 @@ The script will automatically install itself by resolving and instantiating its 
 To bypass this install step, specify the project environment:
 
 ```
-julia --project=contrib/format contrib/format.jl
+julia --project=contrib/format contrib/format/format.jl
 ```
 
 ## Example Usage
