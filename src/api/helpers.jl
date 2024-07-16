@@ -111,11 +111,11 @@ a `true` or a positive value halts iteration successfully, and `false` or zero
 continues iteration.
 
 # Examples
-```julia-repl
-julia> HDF5.API.h5a_iterate(obj, HDF5.API.H5_INDEX_NAME, HDF5.API.H5_ITER_INC) do loc, name, info
-           println(unsafe_string(name))
-           return false
-       end
+```julia
+HDF5.API.h5a_iterate(obj, HDF5.API.H5_INDEX_NAME, HDF5.API.H5_ITER_INC) do loc, name, info
+    println(unsafe_string(name))
+    return false
+end
 ```
 """
 function h5a_iterate(@nospecialize(f), obj_id, idx_type, order, idx=0)
@@ -486,11 +486,11 @@ where a negative return value halts iteration abnormally, `true` or a positive
 value halts iteration successfully, and `false` or zero continues iteration.
 
 # Examples
-```julia-repl
-julia> HDF5.API.h5l_iterate(hfile, HDF5.API.H5_INDEX_NAME, HDF5.API.H5_ITER_INC) do group, name, info
-           println(unsafe_string(name))
-           return HDF5.API.herr_t(0)
-       end
+```julia
+HDF5.API.h5l_iterate(hfile, HDF5.API.H5_INDEX_NAME, HDF5.API.H5_ITER_INC) do group, name, info
+    println(unsafe_string(name))
+    return HDF5.API.herr_t(0)
+end
 ```
 """
 function h5l_iterate(@nospecialize(f), group_id, idx_type, order, idx=0)
