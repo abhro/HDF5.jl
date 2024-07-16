@@ -479,7 +479,7 @@ Executes [`h5l_iterate`](@ref h5l_iterate(::hid_t, ::Cint, ::Cint,
 function `f`, returning the index where iteration ends.
 
 The callback function must correspond to the signature
-```
+```julia
 f(group::HDF5.API.hid_t, name::Ptr{Cchar}, info::Ptr{HDF5.API.H5L_info_t}) -> Union{Bool, Integer}
 ```
 where a negative return value halts iteration abnormally, `true` or a positive

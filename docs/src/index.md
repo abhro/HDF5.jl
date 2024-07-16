@@ -21,8 +21,8 @@ Language wrappers for HDF5 are often described as either "low level" or "high le
 
 ## Installation
 
-```julia
-julia>]
+```julia-repl
+julia> ]
 pkg> add HDF5
 ```
 
@@ -219,9 +219,11 @@ write(g, "mydataset", rand(3,5))
 
 One can use the high level interface `load` and `save` from `FileIO`, where an optional `OrderedDict` can be passed (`track_order` inferred). Note that using `track_order=true` or passing an `OrderedDict` is a promise that the read file has been created with the appropriate ordering flags.
 
-```julia
+```julia-repl
 julia> using OrderedCollections, FileIO
+
 julia> save("track_order.h5", OrderedDict("z"=>1, "a"=>2, "g/f"=>3, "g/b"=>4))
+
 julia> load("track_order.h5"; dict=OrderedDict())
 OrderedDict{Any, Any} with 4 entries:
   "z"   => 1
@@ -461,7 +463,7 @@ The value stored in an attribute can be retrieved like
 read_attribute(parent, name)
 ```
 You can also access the value of an attribute by indexing, like so:
-```julia
+```julia-repl
 julia> attr = attributes(parent)[name];
 julia> attr[]
 ```
@@ -516,7 +518,7 @@ g = HDF5.root(obj)       # g is the group "/"
 
 For array objects (datasets and attributes) the following methods work:
 
-```
+```julia
 dims = size(dset)
 nd = ndims(dset)
 len = length(dset)
@@ -525,7 +527,7 @@ len = length(dset)
 Objects can be created with properties, and you can query those
 properties in the following way:
 
-```
+```julia
 p = HDF5.get_create_properties(dset)
 chunksz = HDF5.get_chunk(p)
 ```

@@ -84,12 +84,14 @@ end
 
 Apply the function f to the result of `h5open(args...; kwargs...)` and close the resulting
 `HDF5.File` upon completion.
-For example with a `do` block:
 
-    h5open("foo.h5","w") do h5
-        h5["foo"]=[1,2,3]
-    end
+For example, with a `do` block:
 
+```julia
+h5open("foo.h5", "w") do h5
+    h5["foo"] = [1,2,3]
+end
+```
 """
 function h5open(f::Function, args...; context=copy(CONTEXT), pv...)
     file = h5open(args...; pv...)

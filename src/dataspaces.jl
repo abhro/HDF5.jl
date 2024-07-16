@@ -179,7 +179,7 @@ Base.isempty(obj::Union{Dataset,Attribute}) = dataspace(isempty, obj)
 Determines whether the given object has no size (consistent with the `API.H5S_NULL` dataspace).
 
 # Examples
-```julia-repl
+```jldoctest
 julia> HDF5.isnull(Dataspace(nothing))
 true
 

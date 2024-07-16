@@ -78,22 +78,30 @@ with class identifier `classid`.
 
 Once defined, the following interfaces can be defined:
 
-    superclass(::Type{P})
+```julia
+superclass(::Type{P})
+```
 
 This should return the type from which `P` inherits. If not defined, it will
 inherit from `GenericProperties`.
 
-    class_propertynames(::Type{P})
+```julia
+class_propertynames(::Type{P})
+```
 
 This should return a `Tuple` of `Symbol`s, being the names of the properties
 associated with `P`.
 
-    class_getproperty(::Type{P}, p::Properties, name::Symbol)
+```julia
+class_getproperty(::Type{P}, p::Properties, name::Symbol)
+```
 
 If `name` is an associated property of type `P`, this should return the value of
 the property, otherwise call `class_getproperty(superclass(P), p, name)`.
 
-    class_setproperty!(::Type{P}, p::Properties, name::Symbol, val)
+```julia
+class_setproperty!(::Type{P}, p::Properties, name::Symbol, val)
+```
 
 If `name` is an associated property of type `P`, this should set the value of
 the property, otherwise call `class_setproperty!(superclass(P), p, name, val)`.

@@ -16,26 +16,26 @@ and press enter to format the repository before committing.
 The format.jl script is meant to be executed directly.
 
 On POSIX systems that understand shebang lines the format.jl can be invoked as follows.
-```
+```sh
 ./contrib/format/format.jl
 ```
 
 Supplying the file as an argument to `julia` also works.
 
-```
+```sh
 julia contrib/format/format.jl
 ```
 
 The script will automatically install itself by resolving and instantiating its environment.
 To bypass this install step, specify the project environment:
 
-```
+```sh
 julia --project=contrib/format contrib/format/format.jl
 ```
 
 ## Example Usage
 
-```
+```sh
 $ julia contrib/format/format.jl
   Activating project at `~/.julia/dev/HDF5/contrib/format`
   No Changes to `~/.julia/dev/HDF5/contrib/format/Project.toml`
