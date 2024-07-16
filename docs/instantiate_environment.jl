@@ -10,7 +10,7 @@ Pkg.develop(; path="..")
 # Add all packages under filter/ as a dev dependency
 filters = ["H5Zbitshuffle", "H5Zblosc", "H5Zbzip2", "H5Zlz4", "H5Zzstd"]
 for filter in filters
-    @info "Running `]develop $filter`"
+    @info "Adding $filter` as a dev dependency"
     Pkg.develop(; path=joinpath("..", "filters", filter))
 end
 
