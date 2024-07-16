@@ -356,9 +356,9 @@ mtx = HDF5.readmmap(mtx_dset) # succeeds immediately
 ## In-memory HDF5 files
 
 It is possible to use HDF5 files without writing or reading from disk. This is useful when receiving or sending data over the network. Typically, when sending data, one might want to
-1) Create a new file in memory. This can be achieved by passing `Drivers.Core(; backing_store=false)` to `h5open(...)`
-2) Add data to the `HDF5.File` object
-3) Get a representation of the file as a byte vector. This can be achieved by calling `Vector{UInt8}(...)` on the file object.
+1. Create a new file in memory. This can be achieved by passing `Drivers.Core(; backing_store=false)` to `h5open(...)`
+2. Add data to the `HDF5.File` object
+3. Get a representation of the file as a byte vector. This can be achieved by calling `Vector{UInt8}(...)` on the file object.
 
 This is illustrated on the example below
 ```julia
