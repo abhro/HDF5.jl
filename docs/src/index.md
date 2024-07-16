@@ -324,8 +324,9 @@ val = dset[15]
 
 Note that `readmmap` returns an `Array` rather than an HDF5 object.
 
-**Note**: if you use `readmmap` on a dataset and subsequently close the file, the array data are still available---and file continues to be in use---until all of the arrays are garbage-collected.
-This is in contrast to standard HDF5 datasets, where closing the file prevents further access to any of the datasets, but the file is also detached and can safely be rewritten immediately.
+!!! note
+    If you use `readmmap` on a dataset and subsequently close the file, the array data are still available—and file continues to be in use—until all of the arrays are garbage-collected.
+    This is in contrast to standard HDF5 datasets, where closing the file prevents further access to any of the datasets, but the file is also detached and can safely be rewritten immediately.
 
 Under the default
 [allocation-time policy](https://portal.hdfgroup.org/display/HDF5/H5P_SET_ALLOC_TIME),
