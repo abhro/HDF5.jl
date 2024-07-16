@@ -16,7 +16,8 @@ makedocs(;
         prettyurls=get(ENV, "CI", "false") == "true",
         canonical="https://JuliaIO.github.io/HDF5.jl",
         assets=String[],
-        sidebar_sitename=false
+        sidebar_sitename=false,
+        size_threshold=512 * 1024,
     ),
     strict=true,
     pages=[
