@@ -1,5 +1,5 @@
 """
-HDF5.Filters
+    HDF5.Filters
 
 This module contains the interface for using filters in HDF5.jl.
 
@@ -446,6 +446,8 @@ const EXTERNAL_FILTER_JULIA_PACKAGES = Dict{API.H5Z_filter_t,String}([
 ])
 
 """
+    ensure_filters_available(f::FilterPipeline)
+
 Error if all filters in a filter pipeline are not available.
 """
 function ensure_filters_available(f::FilterPipeline)

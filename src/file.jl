@@ -171,7 +171,7 @@ function Base.close(obj::File)
 end
 
 """
-  isopen(obj::HDF5.File)
+    isopen(obj::HDF5.File)
 
 Returns `true` if `obj` has not been closed, `false` if it has been closed.
 """
