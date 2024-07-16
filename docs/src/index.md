@@ -104,7 +104,7 @@ If you want to switch to another HDF5 library or the library moved, you can call
 
 ## Opening and closing files
 
-"Plain" (i.e., with no extra formatting conventions) HDF5 files are created and/or opened with the `h5open` command:
+"Plain" (i.e., with no extra formatting conventions) HDF5 files are created and/or opened with the [`h5open`](@ref) command:
 
 ```julia
 fid = h5open(filename, mode)
