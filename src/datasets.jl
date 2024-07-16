@@ -810,8 +810,8 @@ end
 
 Implementation of [`get_chunk_info_all`](@ref) via [`HDF5.API.h5d_chunk_iter`](@ref).
 
-We expect this will be faster, O(N), than using `h5d_get_chunk_info` since this allows us to iterate
-through the chunks once.
+We expect this will be faster, ``O(N)``, than using `h5d_get_chunk_info` since
+this allows us to iterate through the chunks once.
 """
 @inline function _get_chunk_info_all_by_iter(dataset, dxpl=API.H5P_DEFAULT)
     ds = dataspace(dataset)
@@ -832,7 +832,7 @@ end
 
 Implementation of [`get_chunk_info_all`](@ref) via [`HDF5.API.h5d_get_chunk_info`](@ref).
 
-We expect this will be slower, O(N^2), than using `h5d_chunk_iter` since each call to `h5d_get_chunk_info`
+We expect this will be slower, ``O(N^2)``, than using `h5d_chunk_iter` since each call to `h5d_get_chunk_info`
 iterates through the B-tree structure.
 """
 @inline function _get_chunk_info_all_by_index(dataset, dxpl=API.H5P_DEFAULT)
