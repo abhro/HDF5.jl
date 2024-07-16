@@ -100,8 +100,7 @@ const CONTEXT = HDF5Context()
 *Internal API*
 
 Retrieve a property list from the task local context, defaulting to
-`HDF5.CONTEXT` if `task_local_storage()[:hdf5_context]` does not
-exist.
+`HDF5.CONTEXT` if `task_local_storage()[:hdf5_context]` does not exist.
 """
 get_context_property(name::Symbol) =
     getfield(get(task_local_storage(), :hdf5_context, CONTEXT), name)

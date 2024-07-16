@@ -366,8 +366,8 @@ using HDF5
 
 # Creates a new file object without storing to disk by setting `backing_store=false`
 file_as_bytes = h5open("AnyName_InMemory", "w"; driver=Drivers.Core(; backing_store=false)) do fid
-   fid["MyData"] = randn(5, 5) # add some data
-   return Vector{UInt8}(fid) # get a byte vector to send, e.g., using HTTP, MQTT or similar.
+    fid["MyData"] = randn(5, 5) # add some data
+    return Vector{UInt8}(fid) # get a byte vector to send, e.g., using HTTP, MQTT or similar.
 end
 ```
 
@@ -378,7 +378,7 @@ using HDF5
 
 ...
 h5open(file_as_bytes, "r"; name = "in_memory.h5") do fid
-... # Do things with the data
+    ... # Do things with the data
 end
 ...
 ```
@@ -495,7 +495,7 @@ If you need to know whether group `g` has a dataset named `mydata`, you can test
 
 ```julia
 if haskey(g, "mydata")
-   ...
+    ...
 end
 tf = haskey(g, "mydata")
 ```

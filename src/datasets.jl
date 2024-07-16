@@ -620,7 +620,7 @@ heuristic_chunk(x) = Int[]
     do_write_chunk(dataset::Dataset, offset, chunk_bytes::AbstractArray, filter_mask=0)
 
 Write a raw chunk at a given offset.
-`chunk_bytes` is an AbstractArray that can be converted to a pointer, Ptr{Cvoid}.
+`chunk_bytes` is an AbstractArray that can be converted to a pointer, `Ptr{Cvoid}`.
 `offset` is a 1-based list of rank `ndims(dataset)` and must fall on a chunk boundary.
 """
 function do_write_chunk(dataset::Dataset, offset, chunk_bytes::AbstractArray, filter_mask=0)
@@ -633,7 +633,7 @@ end
     do_write_chunk(dataset::Dataset, index, chunk_bytes::AbstractArray, filter_mask=0)
 
 Write a raw chunk at a given linear index.
-`chunk_bytes` is an AbstractArray that can be converted to a pointer, Ptr{Cvoid}.
+`chunk_bytes` is an AbstractArray that can be converted to a pointer, `Ptr{Cvoid}`.
 `index` is 1-based and consecutive up to the number of chunks.
 """
 function do_write_chunk(
