@@ -792,10 +792,10 @@ end
 
 Obtain information on all the chunks in a dataset. Returns a
 `Vector{ChunkInfo{N}}`.  The fields of `ChunkInfo{N}` are
-* offset - `NTuple{N, Int}` indicating the offset of the chunk in terms of elements, reversed to F-order
-* filter_mask - Cuint, 32-bit flags indicating whether filters have been applied to the cunk
-* addr - haddr_t, byte-offset of the chunk in the file
-* size - hsize_t, size of the chunk in bytes
+* `offset` (`NTuple{N, Int}`): the offset of the chunk in terms of elements, reversed to F-order
+* `filter_mask` (`Cuint`): 32-bit flags indicating whether filters have been applied to the cunk
+* `addr` (`haddr_t`): byte-offset of the chunk in the file
+* `size` (`hsize_t`): size of the chunk in bytes
 """
 function get_chunk_info_all(dataset, dxpl=API.H5P_DEFAULT)
     @static if hasmethod(API.h5d_chunk_iter, Tuple{API.hid_t})

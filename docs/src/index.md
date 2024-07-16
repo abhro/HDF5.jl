@@ -110,14 +110,14 @@ If you want to switch to another HDF5 library or the library moved, you can call
 fid = h5open(filename, mode)
 ```
 
-The mode can be any one of the following:
+The `mode` can be any one of the following:
 
-| mode | Meaning                                                             |
-| :--- | :------------------------------------------------------------------ |
-| "r"  | read-only                                                           |
-| "r+" | read-write, preserving any existing contents                        |
-| "cw" | read-write, create file if not existing, preserve existing contents |
-| "w"  | read-write, destroying any existing contents (if any)               |
+| mode   | Meaning                                                             |
+| :----- | :------------------------------------------------------------------ |
+| `"r"`  | read-only                                                           |
+| `"r+"` | read-write, preserving any existing contents                        |
+| `"cw"` | read-write, create file if not existing, preserve existing contents |
+| `"w"`  | read-write, destroying any existing contents (if any)               |
 
 For example
 

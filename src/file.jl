@@ -2,13 +2,13 @@
     h5open(filename::AbstractString, mode::AbstractString="r"; swmr=false, pv...)
 
 Open or create an HDF5 file where `mode` is one of:
- - "r"  read only
- - "r+" read and write
- - "cw" read and write, create file if not existing, do not truncate
- - "w"  read and write, create a new file (destroys any existing contents)
+ - `"r"`  read only
+ - `"r+"` read and write
+ - `"cw"` read and write, create file if not existing, do not truncate
+ - `"w"`  read and write, create a new file (destroys any existing contents)
 
-Pass `swmr=true` to enable (Single Writer Multiple Reader) SWMR write access for "w" and
-"r+", or SWMR read access for "r".
+Pass `swmr=true` to enable (Single Writer Multiple Reader) SWMR write access for `"w"` and
+`"r+"`, or SWMR read access for `"r"`.
 
 Properties can be specified as keywords for [`FileAccessProperties`](@ref) and [`FileCreateProperties`](@ref).
 
