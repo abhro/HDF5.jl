@@ -67,7 +67,9 @@ Alternatively, HDF5.jl provides a convenience function [`HDF5.API.set_libraries!
 ```julia
 using HDF5
 
-HDF5.API.set_libraries!("/usr/lib/x86_64-linux-gnu/hdf5/mpich/libhdf5.so", "/usr/lib/x86_64-linux-gnu/hdf5/mpich/libhdf5_hl.so")
+HDF5.API.set_libraries!(
+    "/usr/lib/x86_64-linux-gnu/hdf5/mpich/libhdf5.so",
+    "/usr/lib/x86_64-linux-gnu/hdf5/mpich/libhdf5_hl.so")
 ```
 Going back to the default, i.e. deleting the preferences again, can be done by calling `HDF5.API.set_libraries!()`.
 If HDF5 cannot be loaded, it may be useful to use the UUID to change these settings:
@@ -98,7 +100,7 @@ libhdf5 = "/usr/lib/x86_64-linux-gnu/hdf5/mpich/libhdf5.so"
 libhdf5_hl = "/usr/lib/x86_64-linux-gnu/hdf5/mpich/libhdf5_hl.so"
 ```
 
-If you want to switch to another HDF5 library or the library moved, you can call the `set_preferences!` commands again (or manually edit LocalPreferences.toml) to set the new paths. Using the default implementation provided by HDF5_jll can be done by simply manually deleting the LocalPreferences.toml file.
+If you want to switch to another HDF5 library or the library moved, you can call the `set_preferences!` commands again (or manually edit LocalPreferences.toml) to set the new paths. Using the default implementation provided by HDF5\_jll can be done by simply manually deleting the LocalPreferences.toml file.
 
 ## Opening and closing files
 
@@ -486,8 +488,8 @@ You can iterate over the objects in a group, i.e.,
 
 ```julia
 for obj in g
-  data = read(obj)
-  println(data)
+    data = read(obj)
+    println(data)
 end
 ```
 
@@ -511,7 +513,7 @@ tf = haskey(attributes(g), "myattribute")
 If you have an HDF5 object, and you want to know where it fits in the hierarchy of the file, the following can be useful:
 
 ```julia
-p = parent(obj)     # p is the parent object (usually a group)
+p = parent(obj)          # p is the parent object (usually a group)
 fn = HDF5.filename(obj)  # fn is a string
 g = HDF5.root(obj)       # g is the group "/"
 ```
@@ -586,7 +588,11 @@ HDF5.set_extent_dims(d, new_dims)
 where dims is a tuple of integers. For example
 
 ```julia
-b = create_dataset(fid, "b", Int, (1000,); max_dims=(HDF5.UNLIMITED,), chunk=(100,)) # HDF5.UNLIMITED is equivalent to typemax(hsize_t)
+b = create_dataset(
+    fid, "b", Int, (1000,);
+    max_dims=(HDF5.UNLIMITED,), # HDF5.UNLIMITED is equivalent to typemax(hsize_t)
+    chunk=(100,),
+)
 HDF5.set_extent_dims(b, (10000,))
 b[1:10000] = collect(1:10000)
 ```
@@ -603,8 +609,8 @@ copy_object(source[data_name], target, name)
 Finally, it's possible to delete objects:
 
 ```julia
-delete_object(parent, name)   # for groups, datasets, and datatypes
-delete_attribute(parent, name)   # for attributes
+delete_object(parent, name)     # for groups, datasets, and datatypes
+delete_attribute(parent, name)  # for attributes
 ```
 
 ## Low-level routines

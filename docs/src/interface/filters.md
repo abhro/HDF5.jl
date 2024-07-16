@@ -159,7 +159,12 @@ FILTERS[H5Z_BSHUF_ID] = BitShuffleFilter
 function Base.push!(p::FilterPipeline, f::BitShuffleFilter)
     ref = Ref(f)
     GC.@preserve ref begin
-        API.h5p_set_filter(p.plist, H5Z_BSHUF_ID, API.H5Z_FLAG_OPTIONAL, 2, pointer_from_objref(ref) + sizeof(Cuint)*3)
+        API.h5p_set_filter(
+            p.plist,
+            H5Z_BSHUF_ID,
+            API.H5Z_FLAG_OPTIONAL,
+            2,
+            pointer_from_objref(ref) + sizeof(Cuint)*3)
     end
     return p
 end

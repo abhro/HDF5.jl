@@ -186,7 +186,8 @@ move_link(
 ) = API.h5l_move(checkvalid(parent), src_name, parent, dest_name, lcpl, lapl)
 
 """
-    create_external(source::Union{HDF5.File, HDF5.Group}, source_relpath, target_filename, target_path;
+    create_external(source::Union{HDF5.File, HDF5.Group}, source_relpath,
+                    target_filename, target_path;
                     lcpl_id=HDF5.API.H5P_DEFAULT, lapl_id=HDF5.H5P.DEFAULT)
 
 Create an external link such that `source[source_relpath]` points to `target_path` within the file

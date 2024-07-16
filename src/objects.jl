@@ -46,7 +46,8 @@ end
 
 # Copy objects
 """
-    copy_object(src_parent::Union{File,Group}, src_path::AbstractString, dst_parent::Union{File,Group}, dst_path::AbstractString)
+    copy_object(src_parent::Union{File,Group}, src_path::AbstractString,
+                dst_parent::Union{File,Group}, dst_path::AbstractString)
 
 Copy data from `src_parent[src_path]` to `dst_parent[dst_path]`.
 
