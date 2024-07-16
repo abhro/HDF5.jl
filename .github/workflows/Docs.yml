@@ -11,7 +11,8 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: Install doc dependencies
-          run: julia docs/instantiate_environment.jl
+          run: julia --project=. instantiate_environment.jl
+          working-directory: docs
         - uses: actions/checkout@v4
         - uses: julia-actions/julia-buildpkg@latest
         - uses: julia-actions/julia-docdeploy@latest
