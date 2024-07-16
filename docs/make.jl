@@ -19,7 +19,7 @@ makedocs(;
         sidebar_sitename=false,
         size_threshold=512 * 1024,
     ),
-    strict=true,
+    #strict=true,
     pages=[
         "Home" => "index.md",
         "Interface" => [
